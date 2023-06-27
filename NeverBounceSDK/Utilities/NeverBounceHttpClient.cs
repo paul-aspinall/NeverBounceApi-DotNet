@@ -86,7 +86,7 @@ namespace NeverBounce.Utilities
         /// </summary>
         private string GenerateUserAgent()
         {
-            string loc = Assembly.GetExecutingAssembly().Location;
+            string loc = Process.GetCurrentProcess().MainModule.FileName;
             string productVersion = FileVersionInfo.GetVersionInfo(loc).ProductVersion;
             return "NeverBounceApi-DotNet/" + productVersion;
         }
